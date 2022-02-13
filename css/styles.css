@@ -577,7 +577,7 @@ body {
 }
 
 .footer-form-decor {
-  margin-left: 93px;
+  margin-left: auto;
 }
 
 .footer-form {
@@ -893,12 +893,14 @@ body {
 
   background-color: var(--primary-bg-color);
 
-  transition: color 250ms var(--transition-cubic);
+  transition: color 250ms var(--transition-cubic),
+    border-color 250ms var(--transition-cubic);
   cursor: pointer;
 }
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
+  border-color: var(--accent-color);
   color: var(--accent-color);
 }
 
@@ -924,9 +926,6 @@ body {
 }
 
 .modal-form-field {
-  display: flex;
-  flex-direction: column;
-
   margin-bottom: 10px;
 
   width: 100%;
@@ -1053,6 +1052,10 @@ body {
 
 .modal-check-icon {
   fill: var(--secondary-text-color);
+}
+
+.modal-form-check:focus + .modal-form-agreement-text span {
+  border-color: var(--accent-color);
 }
 
 .modal-form-check:checked + .modal-form-agreement-text span {
