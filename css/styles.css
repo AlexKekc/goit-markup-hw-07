@@ -680,7 +680,26 @@ body {
   margin-left: 10px;
 }
 
-.portfolio-filter-button {
+.button--current {
+  color: var(--secondary-text-color);
+  background-color: var(--accent-color);
+}
+
+/* -------------------------------- Portfolio -------------------------------- */
+
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  margin-bottom: 50px;
+}
+
+.filter__item + .filter__item {
+  margin-left: 8px;
+}
+
+.filter__button {
   padding: 6px 22px;
 
   font-weight: 500;
@@ -695,34 +714,15 @@ body {
     box-shadow 250ms var(--transition-cubic);
 }
 
-.portfolio-filter-button:hover,
-.portfolio-filter-button:focus {
+.filter__button:hover,
+.filter__button:focus {
   color: var(--secondary-text-color);
   background-color: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
-.current-button {
-  color: var(--secondary-text-color);
-  background-color: var(--accent-color);
-}
-
-/* -------------------------------- Portfolio -------------------------------- */
-
-.portfolio-filter-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  margin-bottom: 50px;
-}
-
-.portfolio-filter-list-item + .portfolio-filter-list-item {
-  margin-left: 8px;
-}
-
-.work-examples-list {
+.work-examples {
   display: flex;
   flex-wrap: wrap;
 
@@ -730,14 +730,14 @@ body {
   margin-left: calc(-1 * var(--card-set-gap));
 }
 
-.work-examples-list-item {
+.work-examples__item {
   flex-basis: calc(100% / 3 - var(--card-set-gap));
 
   margin-top: var(--card-set-gap);
   margin-left: var(--card-set-gap);
 }
 
-.work-examples-link {
+.work-examples__link {
   display: block;
 
   text-decoration: none;
@@ -745,19 +745,19 @@ body {
   transition: box-shadow 250ms var(--transition-cubic);
 }
 
-.work-examples-link:hover,
-.work-examples-link:focus {
+.work-examples__link:hover,
+.work-examples__link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.work-examples-thumb {
+.work-examples__card {
   position: relative;
 
   overflow: hidden;
 }
 
-.work-examples-overlay {
+.work-examples__overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -774,15 +774,15 @@ body {
   transition: transform 250ms var(--transition-cubic);
 }
 
-.work-examples-link:hover .work-examples-overlay {
+.work-examples__link:hover .work-examples__overlay {
   transform: translateY(0);
 }
 
-.work-examples-link:focus .work-examples-overlay {
+.work-examples__link:focus .work-examples__overlay {
   transform: translateY(0);
 }
 
-.work-examples-overlay-text {
+.overlay__text {
   font-size: 18px;
   line-height: 1.56;
 
