@@ -27,10 +27,7 @@
   margin: 0 auto;
   margin-bottom: 30px;
 
-  font-weight: 900;
-  font-size: 44px;
-  line-height: 1.36;
-  letter-spacing: 0.06em;
+  @include font(900, 44px, 1.36, 0.06em);
   text-transform: uppercase;
 
   color: var(--secondary-text-color);
@@ -40,18 +37,15 @@
   min-width: 200px;
   padding: 10px 32px;
 
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.87;
-  letter-spacing: 0.06em;
+  @include font(700, 16px, 1.87, 0.06em);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
   color: var(--secondary-text-color);
   background-color: var(--accent-color);
 
   transition: background-color 250ms var(--transition-cubic);
-}
 
-.hero__button:hover {
-  background-color: var(--hero-button-hover);
+  &:hover {
+    background-color: var(--hero-button-hover);
+  }
 }

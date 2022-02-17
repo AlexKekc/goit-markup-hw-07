@@ -3,9 +3,8 @@
 }
 
 .clients__list {
-  display: flex;
+  @extend %flex-align;
   justify-content: center;
-  align-items: center;
 }
 
 .clients__item + .clients__item {
@@ -13,9 +12,8 @@
 }
 
 .clients__link {
-  display: flex;
+  @extend %flex-align;
   justify-content: center;
-  align-items: center;
   box-sizing: border-box;
 
   width: 170px;
@@ -27,12 +25,12 @@
 
   transition: color 250ms var(--transition-cubic),
     border-color 250ms var(--transition-cubic);
-}
 
-.clients__link:hover,
-.clients__link:focus {
-  color: var(--accent-color);
-  border-color: var(--accent-color);
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+  }
 }
 
 .clients__icon {

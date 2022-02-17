@@ -13,9 +13,7 @@
 .filter__button {
   padding: 6px 22px;
 
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.62;
+  @include font(500, 16px, 1.62, null);
 
   color: var(--title-text-color);
   background-color: var(--secondary-bg-color);
@@ -23,14 +21,19 @@
   transition: color 250ms var(--transition-cubic),
     background-color 250ms var(--transition-cubic),
     box-shadow 250ms var(--transition-cubic);
+
+  &:hover,
+  &:focus {
+    color: var(--secondary-text-color);
+    background-color: var(--accent-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
 }
 
-.filter__button:hover,
-.filter__button:focus {
+.filter__button.button--current {
   color: var(--secondary-text-color);
   background-color: var(--accent-color);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .work-examples {
@@ -54,12 +57,12 @@
   text-decoration: none;
 
   transition: box-shadow 250ms var(--transition-cubic);
-}
 
-.work-examples__link:hover,
-.work-examples__link:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+  &:hover,
+  &:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
 }
 
 .work-examples__wrap {
@@ -83,19 +86,18 @@
 
   transform: translateY(101%);
   transition: transform 250ms var(--transition-cubic);
-}
 
-.work-examples__link:hover .wrap__overlay {
-  transform: translateY(0);
-}
+  .work-examples__link:hover & {
+    transform: translateY(0);
+  }
 
-.work-examples__link:focus .wrap__overlay {
-  transform: translateY(0);
+  .work-examples__link:focus & {
+    transform: translateY(0);
+  }
 }
 
 .wrap__text {
-  font-size: 18px;
-  line-height: 1.56;
+  @include font(null, 18px, 1.56, null);
 
   color: var(--secondary-text-color);
 }
@@ -111,18 +113,13 @@
 .wrap__title {
   margin-bottom: 4px;
 
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 2;
-  letter-spacing: 0.06em;
+  @include font(700, 18px, 2, 0.06em);
 
   color: var(--title-text-color);
 }
 
 .wrap__label {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.87;
+  @include font(400, 16px, 1.87, null);
 
   color: var(--primary-text-color);
 }

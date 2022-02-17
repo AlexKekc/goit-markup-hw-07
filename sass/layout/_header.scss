@@ -1,6 +1,5 @@
 .page-header__container {
-  display: flex;
-  align-items: center;
+  @extend %flex-align;
 }
 
 .page-header {
@@ -11,8 +10,8 @@
   padding-top: 24px;
   padding-bottom: 24px;
   margin-right: 93px;
-}
 
-.page-header__logo--black {
-  color: var(--title-text-color);
+  &--black {
+    color: var(--title-text-color);
+  }
 }

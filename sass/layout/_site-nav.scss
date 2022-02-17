@@ -28,20 +28,17 @@
   padding-top: 32px;
   padding-bottom: 32px;
 
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
+  @include font(500, 14px, 1.14, 0.02em);
   text-decoration: none;
 
   color: var(--title-text-color);
 
   transition: color 250ms var(--transition-cubic);
-}
 
-.site-nav__link:hover,
-.site-nav__link:focus {
-  color: var(--accent-color);
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
 }
 
 .site-nav__link.current-link {

@@ -32,9 +32,7 @@
 .crewman-card__name {
   margin-bottom: 10px;
 
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.19;
+  @include font(500, 16px, 1.19, null);
 
   color: var(--title-text-color);
 }
@@ -42,7 +40,5 @@
 .crewman-card__position {
   margin-bottom: 16px;
 
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.19;
+  @include font(400, 16px, 1.19, null);
 }
