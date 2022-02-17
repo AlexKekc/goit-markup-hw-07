@@ -269,11 +269,6 @@ body {
   color: var(--title-text-color);
 }
 
-.section--nopadding {
-  padding-top: 0;
-  padding-bottom: 94px;
-}
-
 /* -------------------------------- Features -------------------------------- */
 
 .features__list {
@@ -289,7 +284,7 @@ body {
   margin-left: var(--card-set-gap);
 }
 
-.features__item--bg {
+.features__wrap {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -326,6 +321,11 @@ body {
 }
 
 /* -------------------------------- Skills -------------------------------- */
+
+.skills {
+  padding-top: 0;
+  padding-bottom: 94px;
+}
 
 .skills__title {
   margin-bottom: 50px;
@@ -371,7 +371,7 @@ body {
 
 /* -------------------------------- Team -------------------------------- */
 
-.team {
+.team--bg {
   background-color: var(--secondary-bg-color);
 }
 
@@ -426,7 +426,7 @@ body {
   align-items: center;
 }
 
-.socials__item--indent {
+.socials__item + .socials__item {
   margin-left: 10px;
 }
 
@@ -660,6 +660,11 @@ body {
   background-color: var(--hero-button-hover);
 }
 
+.subscribe-form__icon {
+  fill: currentColor;
+  margin-left: 10px;
+}
+
 /* -------------------------------- Buttons -------------------------------- */
 
 .button {
@@ -751,13 +756,13 @@ body {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.work-examples__card {
+.work-examples__wrap {
   position: relative;
 
   overflow: hidden;
 }
 
-.work-examples__overlay {
+.wrap__overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -774,22 +779,22 @@ body {
   transition: transform 250ms var(--transition-cubic);
 }
 
-.work-examples__link:hover .work-examples__overlay {
+.work-examples__link:hover .wrap__overlay {
   transform: translateY(0);
 }
 
-.work-examples__link:focus .work-examples__overlay {
+.work-examples__link:focus .wrap__overlay {
   transform: translateY(0);
 }
 
-.overlay__text {
+.wrap__text {
   font-size: 18px;
   line-height: 1.56;
 
   color: var(--secondary-text-color);
 }
 
-.work-examples-card-container {
+.wrap__container {
   padding: 20px 24px;
 
   box-sizing: border-box;
@@ -797,7 +802,7 @@ body {
   border-top: 0;
 }
 
-.work-examples-card-title {
+.wrap__title {
   margin-bottom: 4px;
 
   font-weight: 700;
@@ -808,7 +813,7 @@ body {
   color: var(--title-text-color);
 }
 
-.work-examples-card-text {
+.wrap__label {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.87;
@@ -861,7 +866,7 @@ body {
   transition: transform 500ms;
 }
 
-.modal-close-btn {
+.modal__close-btn {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -885,17 +890,17 @@ body {
   cursor: pointer;
 }
 
-.modal-close-btn:hover,
-.modal-close-btn:focus {
+.modal__close-btn:hover,
+.modal__close-btn:focus {
   border-color: var(--accent-color);
   color: var(--accent-color);
 }
 
-.modal-close-btn-icon {
+.close-button__icon {
   fill: currentColor;
 }
 
-.modal-form-title {
+.modal__title {
   margin-bottom: 12px;
 
   font-weight: 700;
@@ -912,17 +917,17 @@ body {
   align-items: center;
 }
 
-.modal-form-field {
+.modal-form__field {
   margin-bottom: 10px;
 
   width: 100%;
 }
 
-.modal-form-field:nth-child(4) {
+.modal-form__field:nth-child(4) {
   margin-bottom: 20px;
 }
 
-.modal-form-label {
+.modal-form__label {
   display: block;
 
   margin-bottom: 4px;
@@ -934,12 +939,12 @@ body {
   color: var(--primary-text-color);
 }
 
-.modal-input-wrap {
+.modal-form__wrap {
   position: relative;
   display: block;
 }
 
-.modal-form-input {
+.modal-form__input {
   padding: 12px 0 12px 42px;
 
   width: 100%;
@@ -953,16 +958,16 @@ body {
   transition: border-color 250ms var(--transition-cubic);
 }
 
-.modal-form-input:focus {
+.modal-form__input:focus {
   border-color: var(--accent-color);
 }
 
-.modal-form-input:hover + .modal-icon,
-.modal-form-input:focus + .modal-icon {
+.modal-form__input:hover + .input__icon,
+.modal-form__input:focus + .input__icon {
   fill: var(--accent-color);
 }
 
-.modal-icon {
+.input__icon {
   position: absolute;
   left: 12px;
   top: 50%;
@@ -973,7 +978,7 @@ body {
   transition: fill 250ms var(--transition-cubic);
 }
 
-.modal-form-text-area {
+.modal-form__text-area {
   margin: 0;
   padding: 12px 16px 12px 16px;
 
@@ -993,7 +998,7 @@ body {
   transition: border-color 250ms var(--transition-cubic);
 }
 
-.modal-form-text-area::placeholder {
+.modal-form__text-area::placeholder {
   font-size: 14px;
   line-height: 1.17;
   letter-spacing: 0.01em;
@@ -1001,11 +1006,11 @@ body {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.modal-form-text-area:focus {
+.modal-form__text-area:focus {
   border-color: var(--accent-color);
 }
 
-.modal-form-agreement {
+.modal-form__agreement {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1013,7 +1018,7 @@ body {
   margin-bottom: 30px;
 }
 
-.modal-form-agreement-text {
+.modal-form__label-check {
   display: flex;
   align-items: center;
 
@@ -1023,7 +1028,7 @@ body {
   color: var(--primary-text-color);
 }
 
-.modal-form-agreement-text span {
+.modal-form__label-check span {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1037,27 +1042,27 @@ body {
   border-radius: 2px;
 }
 
-.modal-check-icon {
+.modal-form__check-icon {
   fill: var(--secondary-text-color);
 }
 
-.modal-form-check:focus + .modal-form-agreement-text span {
+.modal-form__check:focus + .modal-form__label-check span {
   border-color: var(--accent-color);
 }
 
-.modal-form-check:checked + .modal-form-agreement-text span {
+.modal-form__check:checked + .modal-form__label-check span {
   background-color: var(--accent-color);
   border: none;
 }
 
-.modal-form-agreement-link {
+.modal-form__agreement-link {
   font-size: 14px;
   line-height: 1.71;
 
   color: var(--accent-color);
 }
 
-.modal-form-btn {
+.modal-form__btn {
   width: 200px;
   height: 50px;
 
@@ -1076,7 +1081,7 @@ body {
   transition: background-color 250ms var(--transition-cubic);
 }
 
-.modal-form-btn:hover,
-.modal-form-btn:focus {
+.modal-form__btn:hover,
+.modal-form__btn:focus {
   background-color: var(--hero-button-hover);
 }
